@@ -12,7 +12,11 @@ import NoteList from "@/components/NoteList/NoteList";
 
 import { fetchNotes } from "@/lib/api";
 
-export default function NotesClient() {
+interface NotesClientProps {
+  tag?: string;
+}
+
+export default function NotesClient({ tag, }: NotesClientProps) {
   const [page, setPage] = useState<number>(1);
   const [search, setSearch] = useState<string>("");
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -23,10 +27,11 @@ export default function NotesClient() {
   }, 300);
 
   const { data, isLoading, isError } = useQuery({
-    queryKey: ["notes", page, search],
+    queryKey: ["notes", page, search, tag],
       queryFn: () => fetchNotes({
   page,
   search,
+  tag
 }),
   
     placeholderData: keepPreviousData,

@@ -7,6 +7,7 @@ import css from './NoteForm.module.css';
 
 import { createNote } from '../../services/noteService';
 import type { NoteTag } from '../../types/note';
+import{NOTE_TAGS} from '../../types/note'
 
 interface NoteFormProps {
   onClose: () => void;
@@ -33,13 +34,15 @@ const validationSchema = Yup.object({
   content: Yup.string().max(500),
 
   tag: Yup.string()
-    .oneOf([
-      'Todo',
-      'Work',
-      'Personal',
-      'Meeting',
-      'Shopping',
-    ])
+    .oneOf(NOTE_TAGS
+      // [
+      // 'Todo',
+      // 'Work',
+      // 'Personal',
+      // 'Meeting',
+      // 'Shopping',
+      // ]
+    )
     .required(),
 });
 
