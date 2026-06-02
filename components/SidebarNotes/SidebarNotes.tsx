@@ -3,13 +3,13 @@ import { NOTE_TAGS } from '@/types/note';
 
 import css from './SidebarNotes.module.css';
 
-const tags = [
-  'Todo',
-  'Work',
-  'Personal',
-  'Meeting',
-  'Shopping',
-];
+// const tags = [
+//   'Todo',
+//   'Work',
+//   'Personal',
+//   'Meeting',
+//   'Shopping',
+// ];
 
 export default function SidebarNotes() {
   return (
