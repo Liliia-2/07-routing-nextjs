@@ -12,7 +12,7 @@ import {
 
 import { fetchNotes } from '@/lib/api';
 
-import NotesClient from './Notes.client';
+import NotesClient from '../notes/filter/[...slug]/Notes.client';
 
 export default async function NotesPage() {
   const queryClient = new QueryClient();
