@@ -2,7 +2,8 @@
 import { useParams, useRouter } from 'next/navigation';
 import Modal from '@/components/Modal/Modal';
 
-import NotePreview from './NotePreview/NotePreview';
+import NotePreview from '../[id]/NotePreview';
+
 
 
 export default function ModalPage(){
